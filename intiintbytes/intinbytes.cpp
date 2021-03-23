@@ -1,26 +1,29 @@
 #include <iostream>
 #include <string>
-using namespace std;
-// рекурсивна функція для визначення кількості встановлених бітів
-int count(int n)
+
+
+int count(unsigned int n)
 {
- if (n == 0)
-  return 0;
- else
-  // якщо останній біт 1 то додаєм 1, якщо ні то нуль, та зміщаємся на 1 біт
-  return (n & 1) + count(n >> 1);
+ int count = 0;
+ while (n) // when n still has bits
+ {
+  count += (n & 1);
+  n >>= 1;
+ }
+ return count;
 }
 int main()
 {
- int n;
- cout << "Input your positive value\n";
- cin >> n;
+ unsigned int n;
+ std::cout << "Input your positive value\n";
+ std::cin >> n;
+  std::cout << "Your value is: "<<n<<std::endl;
  if (n < 0)
  {
-  cout << "Your value is negative, try again";
+  std::cout << "Your value is negative, try again";
   return 0;
  }
- cout << "Amount of bits in your int value: ";
- cout << count(n);
+ std::cout << "Amount of bits in your int value: ";
+ std::cout << count(n);
  return 0;
 }
