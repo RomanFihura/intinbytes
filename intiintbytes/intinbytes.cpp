@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 // рекурсивна функція для визначення кількості встановлених бітів
 int count(int n)
@@ -12,8 +13,13 @@ int count(int n)
 int main()
 {
  int n;
- cout << "Input your int value\n";
+ cout << "Input your positive value\n";
  cin >> n;
+ if (n < 0)
+ {
+  cout << "Your value is negative, try again";
+  return 0;
+ }
  cout << "Amount of bits in your int value: ";
  cout << count(n);
  return 0;
