@@ -18,11 +18,6 @@ int main()
  std::cout << "Input your positive value\n";
  std::cin >> n;
   std::cout << "Your value is: "<<n<<std::endl;
- if (n < 0)
- {
-  std::cout << "Your value is negative, try again";
-  return 0;
- }
  std::cout << "Amount of bits in your int value: ";
  std::cout << count(n);
  return 0;
